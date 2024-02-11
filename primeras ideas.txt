@@ -1,0 +1,4 @@
+hacer app web/SPA que crea cartas de michis, que las personas pueden guardar en su dispositivo tomando una captura de pantalla. El código será HTML, CSS, JS, con alguna adición de React en alguna parte. Deberá realizarsele test con Mocha y NodeJS siguiendo prácticas TDD, usar al menos 2 bibliotecas JS, consumir al menos una API, contar con aria labels, seguir patrones como MVC (Modelo-Vista-Controlador), usar el Local Storage del navegador(https://www.taniarascia.com/how-to-use-local-storage-with-javascript/), Principios SOLID.
+Se hará una investigación sobre el uso y funcionamiento del proyecto, trabajando todo lo que es UX.
+
+usar tipografía de videojuego, que la carta se vea como de pokemon o yugi oh, también que de manera random y poco probable se cree una carta premium, con colores y otras cosas diferentes.

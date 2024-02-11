@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" translate="yes">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./createCards.js" type="module" defer></script>
+  <script src="https://kit.fontawesome.com/1917be8503.js" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="./stylesCreate.css">
+
+  <title>Create Michi Card!</title>
+</head>
+
+<body>
+  <main>
+    <section id="createMichiCard">
+      <h1>Create your own Michi Card</h1><br>
+
+      <img id="coolCat" src="../resources/img/coolCat.jpg"
+        alt="a cool cat with sunglasses inside a house, the cat have some red hair in the top of their head.">
+
+      <form action="#">
+        <label for="michiName">Name of the Michi</label><br>
+        <input type="text" name="michiName" id="michiName" required><br>
+
+        <label for="atributtes">How is the Michi</label><br>
+        <textarea name="atributtes" id="atributtes"
+          placeholder="if empty, the atributtes will be selected by some Celestial Kitty or something." rows="7"
+          cols="50"></textarea>
+        <p id="charCount">0/125</p><br>
+
+        <p>Set the Michi Stats</p>
+        <label for="agilityStat"><span id="blankSpace">_</span>Agility</label>
+        <input type="range" step="1" id="agilityStat" name="agilityStat" max="100" min="1" class="michiStats"
+          value="1"><br>
+
+        <label for="softnessStat">Softness</label>
+        <input type="range" step="1" id="softnessStat" name="softnessStat" max="100" min="1" class="michiStats"
+          value="1"><br>
+
+        <label for="evilnessStat">Evilness</label>
+        <input type="range" step="1" id="evilnessStat" name="evilnessStat" max="100" min="1" class="michiStats"
+          value="1"><br>
+
+        <label for="goodnessStat">Goodness</label>
+        <input type="range" step="1" id="goodnessStat" name="goodnessStat" max="100" min="1" class="michiStats"
+          value="1"><br>
+
+        <label for="velocityStat">Velocity</label>
+        <input type="range" step="1" id="velocityStat" name="velocityStat" max="100" min="1" class="michiStats"
+          value="1"><br><br>
+
+        <label for="ready"></label>
+        <input type="submit" name="ready" id="ready" value="Ready!">
+      </form>
+    </section>
+  </main>
+
+  <!-- Brand new Michi Card -->
+
+
+  <section id="newCard">
+
+    <div id="michiCardTop">
+      <h1 id="name"></h1> <i class="fa-solid fa-shield-cat"></i>
+    </div>
+
+    <div id="divCatImg">
+      <img id="catApiIMG" src="" alt="">
+    </div>
+
+    <div id="atributtesNew">
+      <p></p>
+    </div>
+
+    <div id="stats">
+      <ul>
+        <li>Agility<br><br> <span id="agility"></span></li>
+        <li>Softness<br><br> <span id="softness"></span></li>
+        <li>Evilness<br><br> <span id="evilness"></span></li>
+        <li>Goodness<br><br> <span id="goodness"></span></li>
+        <li>Velocity<br><br> <span id="velocity"></span></li>
+      </ul>
+    </div>
+
+    <p id="footerCard">Developed by Arie Gonz Aguer / diosDeNada</p>
+
+  </section>
+
+
+</body>
+
+</html>
