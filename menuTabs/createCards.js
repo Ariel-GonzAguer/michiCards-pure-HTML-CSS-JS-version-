@@ -32,9 +32,7 @@ class michiCard {
   }
 
   static incrementId() {  // Método estático para incrementar el ID
-  console.log('antes', counterID);
     counterID++;
-     console.log('después', counterID);
     return this._id = counterID++;
   }
 }
@@ -63,6 +61,8 @@ async function collectInfoMichiCard() {
       document.querySelector('main').style.display = 'none';
 
       console.log(newMichiCard)
+    } else {
+      window.alert('You need to write a name first!')
     }
   } catch (error) {
     console.error(error);
@@ -81,7 +81,7 @@ async function createNewMichiCard() {
   document.getElementById('velocity').innerText = newMichiCard._velocity;
 
   // 100 posibilidad en 1000
-  if (Math.floor(Math.random() * 1000) > 500) {
+  if (Math.floor(Math.random() * 1000) > 950) {
     document.getElementById('name').innerHTML = `${newMichiCard._name} <i class="fa-solid fa-star-half-stroke"></i>`;
     document.getElementById('name').style.display = 'flex';
     document.getElementById('name').style.flexWrap = 'wrap';
@@ -105,10 +105,15 @@ async function createNewMichiCard() {
 function randomAtributtes() {
   const options = [
     "The agile cat gracefully leaps from rooftop to rooftop, a shadowy acrobat in the moonlight. Its movements are a dance of precision and power.",
+
     "With a flick of its tail, the playful cat bats at dangling toys, its eyes bright with mischief. It pounces and tumbles, a whirlwind of energy.",
+
     "Nestled in a cozy bed, the contented cat dreams of chasing mice through fields of tall grass. Its gentle purrs fill the room with warmth.",
+
     "Perched on a windowsill, the curious cat watches the world outside with wide-eyed wonder. It yearns to explore beyond the glass barrier.",
+
     "The regal cat lounges in the sun, basking in its own magnificence. It exudes an aura of majesty, commanding respect with every graceful movement.",
+
     "Under the cover of darkness, the mysterious cat becomes a silent hunter, its sleek form gliding through the shadows with silent purpose."
   ];
   const randomAtributte = options[Math.floor(Math.random() * options.length)];
@@ -143,8 +148,9 @@ document.getElementById('atributtes').addEventListener('input', (e) => {
   charCount.textContent = `${charLength}/${maxLength + 1}`;
 });
 
-// local storage
-// Cargar instancias y estado de counterID del localStorage
+
+// local storage stuff
+// Load instances and counterID value in localStorage //
 window.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('michiCards')) {
         michiCards = JSON.parse(localStorage.getItem('michiCards'));
@@ -154,7 +160,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Guardar instancias y estado de counterID en el localStorage
+// save instances and counterID value in localStorage //
 window.addEventListener('beforeunload', () => {
     localStorage.setItem('michiCards', JSON.stringify(michiCards));
     localStorage.setItem('counterID', counterID);
