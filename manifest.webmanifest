@@ -1,0 +1,28 @@
+{
+  "id": "/index.html",
+  "short_name": "Michi Cards",
+  "name": "Michi Cards. Create Your Own Cat Cards!",
+  "icons": [
+    {
+      "src": "/resources/img/catShield_icon.png",
+      "type": "image/png",
+      "sizes": "185x185"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "pink",
+  "display_override": [
+    "minimal-ui",
+    "standalone"
+  ],
+  "display": "fullscreen",
+  "scope": "/",
+  "theme_color": "pink",
+  "description": "Create Your Own Cats Cards",
+  "screenshots": [{
+    "src": "/resources/img/screenshot.png",
+    "type": "image/png",
+    "sizes": "590x460"
+  }],
+  "this_are_the_minumum_atributtes_to_make_a_PWA": "true"
+}

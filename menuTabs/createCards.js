@@ -8,6 +8,7 @@ async function getImg() {
     if (response.ok) {
       const jsonResponse = await response.json();
       const imgURL = jsonResponse[0]['url'];
+      console.log(jsonResponse);
       return imgURL;
     }
   } catch (error) {
@@ -59,8 +60,6 @@ async function collectInfoMichiCard() {
 
       document.getElementById('newCard').style.display = 'grid';
       document.querySelector('main').style.display = 'none';
-
-      console.log(newMichiCard)
     } else {
       window.alert('You need to write a name first!')
     }
