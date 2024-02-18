@@ -193,28 +193,3 @@ window.addEventListener('beforeunload', () => {
   localStorage.setItem('michiCards', JSON.stringify(michiCards));
   localStorage.setItem('counterID', counterID);
 });
-
-
-// experiment:
-// cambiar comportamiento de input range para que no salga el teclado
-const rangeInputs = document.querySelectorAll('input[type="range"]');
-
-rangeInputs.forEach(input => {
-input.addEventListener('touchstart', () => {
-  input.type = 'text';
-});
-
-input.addEventListener('touchend', () => {
-  input.type = 'range';
-});
-
-input.addEventListener('mousedown', () => {
-  input.type = 'text';
-});
-
-input.addEventListener('mouseup', () => {
-  input.type = 'range';
-});
-})
-
-
