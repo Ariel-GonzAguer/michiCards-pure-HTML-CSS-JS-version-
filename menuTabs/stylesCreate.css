@@ -94,7 +94,7 @@ p {
   width: 100%;
   height: 100vh;
   background-color: pink;
-  border: 10px solid black;
+  border: 10px double black;
   grid-template: 15% 40% 35% 5% 5% / repeat(5, 1fr);
   align-items: center;
   justify-content: center;
@@ -122,10 +122,10 @@ p {
   justify-content: center;
 }
 
-#catApiIMG {
-  width: auto;
-  height: 95%;
-  border: 10px double black;
+#catImg {
+  height: 100%;
+  width: 90%;
+  border: 10px solid black;
 }
 
 #atributtesNew {
@@ -190,10 +190,10 @@ p {
   }
 
   #stats li {
-  font-size: 0.6rem;
-}
+    font-size: 0.6rem;
+  }
 
-#footerCard {
-  font-size: 0.6rem;
-}
+  #footerCard {
+    font-size: 0.6rem;
+  }
 }
