@@ -95,7 +95,7 @@ p {
   height: 100vh;
   background-color: pink;
   border: 10px solid black;
-  grid-template: 15% 35% 35% 10% 5% / repeat(5, 1fr);
+  grid-template: 15% 40% 35% 5% 5% / repeat(5, 1fr);
   align-items: center;
   justify-content: center;
 }
@@ -116,11 +116,15 @@ p {
 #divCatImg {
   grid-area: 2/1/3/6;
   height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #catApiIMG {
-  width: 90%;
-  height: 100%;
+  width: auto;
+  height: 95%;
   border: 10px double black;
 }
 
@@ -132,6 +136,9 @@ p {
   width: 90%;
   background-color: white;
   border: 1px black solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #atributtesNew p {
@@ -159,12 +166,34 @@ p {
   margin: auto 6px;
 }
 
-#footerCard {
+#footer {
   background-color: white;
   border: 1px dotted black;
   width: 100%;
   height: 100%;
   grid-area: 5/1/6/6;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#footerCard {
   font-size: 0.45rem;
-  line-height: 1.5rem;
+}
+
+/* media queries */
+@media only screen and (min-width: 475px) and (max-width: 600px) {
+  #catApiIMG {
+    width: auto;
+    height: 100%;
+  }
+
+  #stats li {
+  font-size: 0.6rem;
+}
+
+#footerCard {
+  font-size: 0.6rem;
+}
 }

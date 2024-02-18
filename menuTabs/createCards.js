@@ -3,18 +3,29 @@ const urlTheCatApi = 'https://api.thecatapi.com/v1/images/search';
 
 // get img from TheCatAPI
 async function getImg() {
+// esta función al usarl el bucle while (true) se ejecutará continuamente hasta que se cumpla una condición específica o hasta que se produzca alguna acción para detenerlo. En este caso hasta que se cumpla la condición del tamaño de la img. Es MUY útil para llamadas a APIs con requrimientos.
   try {
-    const response = await fetch(urlTheCatApi);
-    if (response.ok) {
-      const jsonResponse = await response.json();
-      const imgURL = jsonResponse[0]['url'];
-      console.log(jsonResponse);
-      return imgURL;
+    let imgURL;
+    while (true) {
+      const response = await fetch(urlTheCatApi);
+      if (response.ok) {
+        const jsonResponse = await response.json();
+        console.log(jsonResponse);
+        if (await jsonResponse[0]['width'] >= '700' && await jsonResponse[0]['height'] >= '1350') {
+          imgURL = jsonResponse[0]['url'];
+          break; // Salir del bucle si se cumple la condición
+        }
+      } else {
+        throw new Error('Error al obtener la imagen');
+      }
     }
+    return imgURL;
   } catch (error) {
-    console.error(error)
+    console.error(error);
+    return null; //
   }
 }
+
 
 // create Card
 let counterID = 0;
@@ -103,18 +114,31 @@ async function createNewMichiCard() {
 // helpers
 function randomAtributtes() {
   const options = [
-    "The agile cat gracefully leaps from rooftop to rooftop, a shadowy acrobat in the moonlight. Its movements are a dance of precision and power.",
-
-    "With a flick of its tail, the playful cat bats at dangling toys, its eyes bright with mischief. It pounces and tumbles, a whirlwind of energy.",
-
-    "Nestled in a cozy bed, the contented cat dreams of chasing mice through fields of tall grass. Its gentle purrs fill the room with warmth.",
-
-    "Perched on a windowsill, the curious cat watches the world outside with wide-eyed wonder. It yearns to explore beyond the glass barrier.",
-
-    "The regal cat lounges in the sun, basking in its own magnificence. It exudes an aura of majesty, commanding respect with every graceful movement.",
-
-    "Under the cover of darkness, the mysterious cat becomes a silent hunter, its sleek form gliding through the shadows with silent purpose."
-  ];
+  `In the land of whiskers and purrs, there roamed a fearless feline known to all as ${document.getElementById('michiName').value}.`,
+  `Once upon a time, in the realm of yarn and mice, ${document.getElementById('michiName').value} the Great prowled with silent steps and majestic poise.`,
+  `Amidst the meadows of catnip and sunbeams, ${document.getElementById('michiName').value} reigned supreme, his regal presence commanding respect from all who beheld him.`,
+  `In the heart of the enchanted forest, ${document.getElementById('michiName').value} the Magnificent roamed with an air of mystique and wonder.`,
+  `From the shadows of the moonlit night emerged ${document.getElementById('michiName').value}, the valiant protector of his domain.`,
+  `Beneath the starry skies, ${document.getElementById('michiName').value} the Brave embarked on daring adventures, his whiskers twitching with anticipation and excitement.`,
+  `Through the labyrinth of alleyways and rooftops, ${document.getElementById('michiName').value} the Cunning stalked his prey with precision and stealth.`,
+  `In the annals of feline history, none were as legendary as ${document.getElementById('michiName').value} the Wise, guiding his disciples on the path to enlightenment.`,
+  `As the sun dipped below the horizon, ${document.getElementById('michiName').value} the Regal ascended to his throne, his majestic presence casting a golden glow upon his subjects.`,
+  `In the realm of dreams and moonbeams, ${document.getElementById('michiName').value} the Enigmatic danced with ethereal grace and otherworldly beauty.`,
+  `Upon the ancient pyramids of sand and sun, ${document.getElementById('michiName').value} the Desert King reigned supreme, his golden fur shimmering in the scorching heat.`,
+  `In the heart of the bustling metropolis, ${document.getElementById('michiName').value} the Urban Explorer traversed the concrete jungle with fearless determination.`,
+  `Amidst the rolling hills and whispering winds, ${document.getElementById('michiName').value} the Nomad wandered with a free spirit and wild heart.`,
+  `In the depths of the enchanted forest, ${document.getElementById('michiName').value} the Forest Guardian watched over the ancient trees with a vigilant eye.`,
+  `Beneath the silvery glow of the full moon, ${document.getElementById('michiName').value} the Night Stalker prowled with silent grace and predatory skill.`,
+  `Upon the windswept cliffs of the rugged coastline, ${document.getElementById('michiName').value} the Sea Marauder surveyed his watery domain with a keen eye and salty whiskers.`,
+  `In the land of eternal snow and ice, ${document.getElementById('michiName').value} the Frost Wanderer braved the frigid temperatures with stoic resolve.`,
+  `Amidst the ancient ruins of a forgotten civilization, ${document.getElementById('michiName').value} the Relic Hunter delved into the depths of history with insatiable curiosity.`,
+  `In the heart of the sapphire jungle, ${document.getElementById('michiName').value} the Jungle Sentinel stood as guardian of the verdant realm.`,
+  `Beneath the shimmering lights of the neon cityscape, ${document.getElementById('michiName').value} the Neon Nomad roamed with an electric energy and vibrant spirit.`,
+  `Upon the sun-kissed meadows of the rolling countryside, ${document.getElementById('michiName').value} the Meadow Wanderer frolicked with boundless joy and carefree abandon.`,
+  `In the heart of the ancient temple ruins, ${document.getElementById('michiName').value} the Temple Guardian watched over sacred relics with unwavering devotion.`,
+  `Amidst the swirling mists of the mystical marshlands, ${document.getElementById('michiName').value} the Marsh Mystic communed with the spirits of the swamp with an otherworldly grace.`,
+  `Beneath the shadow of the towering skyscrapers, ${document.getElementById('michiName').value} the Alley Avenger prowled with a steely determination and unwavering resolve.`
+];
   const randomAtributte = options[Math.floor(Math.random() * options.length)];
   return randomAtributte;
 }
@@ -151,16 +175,16 @@ document.getElementById('atributtes').addEventListener('input', (e) => {
 // local storage stuff
 // Load instances and counterID value in localStorage //
 window.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem('michiCards')) {
-        michiCards = JSON.parse(localStorage.getItem('michiCards'));
-    }
-    if (localStorage.getItem('counterID')) {
-        counterID = parseInt(localStorage.getItem('counterID'));
-    }
+  if (localStorage.getItem('michiCards')) {
+    michiCards = JSON.parse(localStorage.getItem('michiCards'));
+  }
+  if (localStorage.getItem('counterID')) {
+    counterID = parseInt(localStorage.getItem('counterID'));
+  }
 });
 
 // save instances and counterID value in localStorage //
 window.addEventListener('beforeunload', () => {
-    localStorage.setItem('michiCards', JSON.stringify(michiCards));
-    localStorage.setItem('counterID', counterID);
+  localStorage.setItem('michiCards', JSON.stringify(michiCards));
+  localStorage.setItem('counterID', counterID);
 });
