@@ -1,9 +1,4 @@
 -investigar sobre input type 'file'.
--crear guía de usuario.
--publicar el repositorio.
--centrar el texto de atributtes.
--agregar 18 attributes más al array.
 -agregar más cartas extrañas.
 -agregar una carta de juego.
--cambiar el tipo de input range a text cuando se toque el range, para evitar que se abra el teclado.
--aceptar solo img de cierto tamaño para las cartas.
+-agregar colección dentro de la app. 
