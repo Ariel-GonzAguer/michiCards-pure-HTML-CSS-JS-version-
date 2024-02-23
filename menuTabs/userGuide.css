@@ -17,6 +17,7 @@ html {
   text-align: center;
   background-color: pink;
 }
+
 h1 {
   font-size: 2rem;
   margin: 60px auto;
@@ -30,8 +31,37 @@ p {
 details {
   margin-bottom: 30px;
   line-height: 1.7rem;
+  background-color: white;
+  padding: 5px 15px;
+  border: 10px solid pink;
 }
 
 summary {
   font-size: 1.3rem;
+}
+
+#backBtn {
+  height: 40px;
+  width: 80px;
+  margin-bottom: 10px;
+  font-family: 'Press Start 2P', monospace;
+
+}
+
+#backBtn a,
+#backBtn a:link,
+#backBtn a:visited,
+#backBtn a:active {
+  text-decoration: none;
+  color: black;
+}
+
+.hey {
+  background-color: #1B1C1E;
+  color: white;
+  padding: 6px;
+}
+
+li {
+  list-style: none;
 }
