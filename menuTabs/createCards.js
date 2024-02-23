@@ -57,7 +57,7 @@ async function collectInfoMichiCard() {
     if (document.getElementById('michiName').checkValidity()) {
       // e.preventDefault();
       const michiName = document.getElementById('michiName').value;
-      const imgMichi = await getImg();
+      const imgMichi = document.getElementById('photo') ? document.getElementById('photo').value : await getImg();
       const michiAtributtes =
         document.getElementById('atributtes').value === '' ? randomAtributtes() : document.getElementById('atributtes').value;
       const agilityStatValue = document.getElementById('agilityStat').value === '1' ? randomStats() : document.getElementById('agilityStat').value;
