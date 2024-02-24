@@ -1,3 +1,10 @@
+/* 
+1.General styles.
+2.Create card.
+3.
+ */
+
+/* 1.General styles. */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -34,6 +41,8 @@ p {
   font-size: 1.2rem;
 }
 
+
+/* 2.Create card */
 #michiName {
   color: black;
   width: 66%;
@@ -46,7 +55,7 @@ p {
 }
 
 #atributtes {
-  margin-bottom: 5px;
+  margin: 5px auto;
   background-color: white;
   font-size: 1.1rem;
   width: 90%;
@@ -71,22 +80,22 @@ p {
   margin: 10px 0;
 }
 
-#form {
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
-}
-
-#ready {
-  width: 100px;
-  height: 50px;
-  margin: 10px;
+#photo {
+  margin: 5px auto;
 }
 
 #blankSpace {
   color: rgb(255, 224, 230);
 }
 
+#lookMichi {
+  font-family: 'Press Start 2P', monospace;
+  margin-bottom: 40px;
+  height: 40px;
+  width: 200px;
+  background-color: rgb(231, 231, 231);
+}
+
 #ready {
   height: 40px;
   width: 100px;
@@ -94,11 +103,12 @@ p {
   font-family: 'Press Start 2P', monospace;
 }
 
-#backBtn{
+#backBtn {
   height: 40px;
   width: 80px;
   margin-bottom: 10px;
   font-family: 'Press Start 2P', monospace;
+  background-color: rgb(160, 159, 159);
 }
 
 #backBtn a,

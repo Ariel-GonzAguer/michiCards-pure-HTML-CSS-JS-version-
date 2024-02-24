@@ -2,10 +2,10 @@
 const urlTheCatApi = 'https://api.thecatapi.com/v1/images/search';
 
 // get img from TheCatAPI
+let imgURL;
 async function getImg() {
   // esta función al usarl el bucle while (true) se ejecutará continuamente hasta que se cumpla una condición específica o hasta que se produzca alguna acción para detenerlo. En este caso hasta que se cumpla la condición del tamaño de la img. Es MUY útil para llamadas con requrimientos.
   try {
-    let imgURL;
     while (true) {
       const response = await fetch(urlTheCatApi);
       if (response.ok) {
@@ -25,6 +25,20 @@ async function getImg() {
   }
 }
 
+// preview img
+document.getElementById('lookMichi').addEventListener('click', async (e) => {
+  e.preventDefault();
+  imgURL = await getImg();
+  const previewImg = document.getElementById('previewImg');
+  previewImg.style.display = 'block';
+  previewImg.style.height = '200px';
+  previewImg.style.width = '400px';
+  previewImg.style.marginBottom = '20px';
+  previewImg.style.backgroundRepeat = 'no-repeat';
+  previewImg.style.backgroundSize = 'contain';
+  previewImg.style.backgroundPosition = 'center';
+  previewImg.style.backgroundImage = `url(${imgURL})`;
+});
 
 // create Card
 let counterID = 0;
@@ -56,7 +70,7 @@ async function collectInfoMichiCard() {
     if (document.getElementById('michiName').checkValidity()) {
       // e.preventDefault();
       const michiName = document.getElementById('michiName').value;
-      const imgMichi = document.getElementById('photo').files[0] ? getPhoto() : await getImg();
+      const imgMichi = document.getElementById('photo').files[0] ? getPhoto() : imgURL;
       const michiAtributtes =
         document.getElementById('atributtes').value === '' ? randomAtributtes() : document.getElementById('atributtes').value;
       const agilityStatValue = document.getElementById('agilityStat').value === '1' ? randomStats() : document.getElementById('agilityStat').value;
@@ -66,9 +80,7 @@ async function collectInfoMichiCard() {
       const velocityStatValue = document.getElementById('velocityStat').value === '1' ? randomStats() : document.getElementById('velocityStat').value;
 
       newMichiCard = new michiCard(michiName, imgMichi, michiAtributtes, agilityStatValue, softnessStatValue, evilnessStatValue, goodnessStatValue, velocityStatValue);
-      console.log(newMichiCard); //borrar
       michiCards.push(newMichiCard);
-      console.log(michiCards) //borrar
 
       document.getElementById('newCard').style.display = 'grid';
       document.querySelector('main').style.display = 'none';
@@ -80,13 +92,11 @@ async function collectInfoMichiCard() {
   }
 }
 
-
 async function createNewMichiCard() {
   document.getElementById('name').innerText = newMichiCard._name;
-  document.getElementById('catImg').style.backgroundImage = getPhoto() ? getPhoto() : `url(${newMichiCard._img})`;
-  document.getElementById('catImg').style.backgroundRepeat = 'no-repeat'; // Cambia el repeat
+  document.getElementById('catImg').style.backgroundImage = document.getElementById('photo').files[0] ? getPhoto() : `url(${newMichiCard._img})`;
+  document.getElementById('catImg').style.backgroundRepeat = 'no-repeat';
   document.getElementById('catImg').style.backgroundSize = 'cover';
-
   document.querySelector('#atributtesNew p').innerText = newMichiCard._atributtes;
   document.getElementById('agility').innerText = newMichiCard._agility;
   document.getElementById('softness').innerText = newMichiCard._softness;
@@ -94,9 +104,8 @@ async function createNewMichiCard() {
   document.getElementById('goodness').innerText = newMichiCard._goodness;
   document.getElementById('velocity').innerText = newMichiCard._velocity;
 
-  // 100 posibilidad en 1000
+  // 24 posibilidad en 1000
   if (Math.floor(Math.random() * 1000) > 976) {
-    console.log('if');
     document.getElementById('name').innerHTML = `${newMichiCard._name} <i class="fa-solid fa-star-half-stroke"></i>`;
     document.getElementById('name').style.display = 'flex';
     document.getElementById('name').style.flexWrap = 'wrap';
@@ -106,7 +115,6 @@ async function createNewMichiCard() {
 
     //  posibilidad 1 de 1000
   } else if (Math.floor(Math.random() * 1000) === 6) {
-    console.log('else if');
     document.getElementById('name').style.color = 'pink';
     document.getElementById('name').innerHTML = `${newMichiCard._name} <i class="fa-solid fa-star"></i>`;
     document.getElementById('name').style.display = 'flex';
@@ -154,9 +162,8 @@ function randomStats() {
 }
 
 
-// eventListenner
-
-//experimental user load photo
+// eventListenners
+// user load photo
 function getPhoto() {
   const file = document.getElementById('photo').files[0];
   if (file) {
@@ -167,8 +174,6 @@ function getPhoto() {
     reader.readAsDataURL(file);
   }
 }
-
-
 
 // create and lunch new Michi Card //
 document.getElementById('ready').addEventListener('click', async (e) => {

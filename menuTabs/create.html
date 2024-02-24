@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./stylesCreate.css">
-  <script src="./createCards.js" defer></script>
+  <link rel="stylesheet" href="./create.css">
+  <script src="./create.js" defer></script>
   <link rel="manifest" href="/manifest.webmanifest">
   <script src="https://kit.fontawesome.com/1917be8503.js" crossorigin="anonymous"></script>
 
@@ -29,7 +29,7 @@
 
       <form action="#">
         <label for="michiName">Name of the Michi</label><br>
-        <input type="text" name="michiName" id="michiName" required maxlength="9"><br>
+        <input type="text" name="michiName" id="michiName" maxlength="9" required><br>
 
         <label for="atributtes">How is the Michi</label><br>
         <textarea name="atributtes" id="atributtes"
@@ -58,8 +58,17 @@
         <input type="range" step="1" id="velocityStat" name="velocityStat" max="100" min="1" class="michiStats"
           value="1"><br><br>
 
-        <label for="photo">photo</label>
-        <input type="file" name="photo" id="photo" accept="image/*" capture="environment">
+        <label for="photo">Load your own photo!</label><br>
+        <input type="file" name="photo" id="photo" accept="image/*" capture="environment"><br><br>
+
+        <p>Or</p><br>
+
+        <div id="previewDiv">
+        <button id="lookMichi">Preview your Michi!</button>
+          <div id="previewImg">
+
+          </div>
+        </div>
 
         <label for="ready"></label>
         <input type="submit" name="ready" id="ready" value="Ready!">

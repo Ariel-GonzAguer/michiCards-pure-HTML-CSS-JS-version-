@@ -1,14 +1,14 @@
-// endPoints
-const urlCATAAS = 'https://cataas.com/cat/gif'
-
 // Intro
 setTimeout(() => {
   document.getElementById('intro').style.display = 'none';
   document.getElementById('homePageCard').style.display = 'grid';
   getGif();
-}, 1000); //CAMBIAR AL FINAL A 5000
+}, 2000);
 
 // get gif for Home Page Card
+/* endPoint */
+const urlCATAAS = 'https://cataas.com/cat/gif';
+
 async function getGif() {
   try {
     const response = await fetch(urlCATAAS);
@@ -33,7 +33,7 @@ document.getElementById('contact').addEventListener('click', () => {
 // donation redirection
 document.getElementById('donate').addEventListener('click', () => {
   try {
-    alert('You are being redirected to a Pay Pal profile. Thanks for you dontion!');
+    alert('You are being redirected to a Pay Pal profile. Thanks for you donation!');
     window.open('https://paypal.me/ariegonzaguer?country.x=CR&locale.x=es_XC')
   } catch (error) {
     console.error(error);
