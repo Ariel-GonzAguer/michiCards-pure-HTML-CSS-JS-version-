@@ -87,6 +87,28 @@ p {
   color: rgb(255, 224, 230);
 }
 
+#ready {
+  height: 40px;
+  width: 100px;
+  margin-bottom: 10px;
+  font-family: 'Press Start 2P', monospace;
+}
+
+#backBtn{
+  height: 40px;
+  width: 80px;
+  margin-bottom: 10px;
+  font-family: 'Press Start 2P', monospace;
+}
+
+#backBtn a,
+#backBtn a:link,
+#backBtn a:visited,
+#backBtn a:active {
+  text-decoration: none;
+  color: black;
+}
+
 /* new card */
 
 #newCard {

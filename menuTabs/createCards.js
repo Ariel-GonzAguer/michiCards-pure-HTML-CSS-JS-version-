@@ -3,15 +3,14 @@ const urlTheCatApi = 'https://api.thecatapi.com/v1/images/search';
 
 // get img from TheCatAPI
 async function getImg() {
-  // esta función al usarl el bucle while (true) se ejecutará continuamente hasta que se cumpla una condición específica o hasta que se produzca alguna acción para detenerlo. En este caso hasta que se cumpla la condición del tamaño de la img. Es MUY útil para llamadas a APIs con requrimientos.
+  // esta función al usarl el bucle while (true) se ejecutará continuamente hasta que se cumpla una condición específica o hasta que se produzca alguna acción para detenerlo. En este caso hasta que se cumpla la condición del tamaño de la img. Es MUY útil para llamadas con requrimientos.
   try {
     let imgURL;
     while (true) {
       const response = await fetch(urlTheCatApi);
       if (response.ok) {
         const jsonResponse = await response.json();
-        console.log(jsonResponse);
-        if (await jsonResponse[0]['width'] >= '700' && await jsonResponse[0]['height'] >= '1350') {
+        if (await jsonResponse[0]['width'] >= '500' && await jsonResponse[0]['height'] >= '1000') {
           imgURL = jsonResponse[0]['url'];
           break; // Salir del bucle si se cumple la condición
         }
@@ -57,7 +56,7 @@ async function collectInfoMichiCard() {
     if (document.getElementById('michiName').checkValidity()) {
       // e.preventDefault();
       const michiName = document.getElementById('michiName').value;
-      const imgMichi = /*document.getElementById('photo') ? document.getElementById('photo').value : */ await getImg();
+      const imgMichi = document.getElementById('photo').files[0] ? getPhoto() : await getImg();
       const michiAtributtes =
         document.getElementById('atributtes').value === '' ? randomAtributtes() : document.getElementById('atributtes').value;
       const agilityStatValue = document.getElementById('agilityStat').value === '1' ? randomStats() : document.getElementById('agilityStat').value;
@@ -67,7 +66,9 @@ async function collectInfoMichiCard() {
       const velocityStatValue = document.getElementById('velocityStat').value === '1' ? randomStats() : document.getElementById('velocityStat').value;
 
       newMichiCard = new michiCard(michiName, imgMichi, michiAtributtes, agilityStatValue, softnessStatValue, evilnessStatValue, goodnessStatValue, velocityStatValue);
+      console.log(newMichiCard); //borrar
       michiCards.push(newMichiCard);
+      console.log(michiCards) //borrar
 
       document.getElementById('newCard').style.display = 'grid';
       document.querySelector('main').style.display = 'none';
@@ -82,7 +83,7 @@ async function collectInfoMichiCard() {
 
 async function createNewMichiCard() {
   document.getElementById('name').innerText = newMichiCard._name;
-  document.getElementById('catImg').style.backgroundImage = `url(${newMichiCard._img})`;
+  document.getElementById('catImg').style.backgroundImage = getPhoto() ? getPhoto() : `url(${newMichiCard._img})`;
   document.getElementById('catImg').style.backgroundRepeat = 'no-repeat'; // Cambia el repeat
   document.getElementById('catImg').style.backgroundSize = 'cover';
 
@@ -154,6 +155,21 @@ function randomStats() {
 
 
 // eventListenner
+
+//experimental user load photo
+function getPhoto() {
+  const file = document.getElementById('photo').files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      document.getElementById('catImg').style.backgroundImage = `url(${e.target.result})`;
+    }
+    reader.readAsDataURL(file);
+  }
+}
+
+
+
 // create and lunch new Michi Card //
 document.getElementById('ready').addEventListener('click', async (e) => {
   e.preventDefault();
@@ -193,3 +209,4 @@ window.addEventListener('beforeunload', () => {
   localStorage.setItem('michiCards', JSON.stringify(michiCards));
   localStorage.setItem('counterID', counterID);
 });
+
