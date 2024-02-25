@@ -14,9 +14,9 @@ With this project You can make card similar to other card games like Pokemon or 
 
 ### How to use
 This section will guide you through easy use of the app, with clear directions.
-- To create a **New Michi Card**, press the *'Create Michi Card'* option.\
-It is the first option on the main menu.\
-- You'll instantly see a Cool kitten wearing sunglasses, and the Form to create your own Michi Card!\
+- To create a **New Michi Card**, press the *'Create Michi Card'* option.
+It is the first option on the main menu.
+- You'll instantly see a Cool kitten wearing sunglasses, and the Form to create your own Michi Card!
 - **The only essential requirement on the form to create the card is to write Michi's name.**\
 The name must be a maximum of 9 characters. Choose the name that seems funniest or cutest to you.\
 -You can write a description about the feline in the 'How is the Michi' section, in 125 characters (including spaces) or less. If you don't write anything, no problem, some feline deity will grant the Michi they divine personality.\
