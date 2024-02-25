@@ -29,8 +29,8 @@ Try to put the face of your Michi in the upper section of the photo to have bett
 2. Use a random photo obtained by the app
 Just press 'Preview Your Michi' buttom to see the kitty cat photo that will be in the new Card.
 
-Once the above information is complete, press the '**Ready!**' button to see the new created Michi Card. \
-Now You can take a screenshot to save the new Michi Card on our device!\
+Once the above information is complete, press the '**Ready!**' button to see the new created Michi Card.\
+Now You can take a screenshot to save the new Michi Card on our device!
 
 **Note**: to create a New Michi Card, after created one, just refresh/reload your browser, and you will be back in the Create Your Own Michi Card section.
 
