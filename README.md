@@ -42,6 +42,11 @@ The icons are part of the free [Font Awesome](https://fontawesome.com/) collecti
 I found the Cool kitten wearing sunglasses many years ago on Google doing another project with cats. Currently I can't find its source. The initial loading animation was achieved thanks to [animista.net](https://animista.net/).\
 And the font comes from Google Fonts.
 
+### Device considerations
+- It is essential that the device have an internet connection to use the app.
+- The app is designed to be used on mobile devices with small-medium to medium-sized screens. On laptops, desktop computers and tablets with large screens, THE IMAGES COULD LOOK KINDA WEIRD.
+- To avoid image distortion, the device must be placed vertically (not panoramic) when taking the screenshot.
+
 
 ### What to collaborate?
 Just send a message! :cat:
