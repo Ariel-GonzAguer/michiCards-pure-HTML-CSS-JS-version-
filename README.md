@@ -45,9 +45,9 @@ The initial loading animation was achieved thanks to [animista.net](https://anim
 And the font comes from Google Fonts.
 
 ### Device considerations
-- :wireless: It is essential that the device have an internet connection to use the app.
-- The app is designed to be used on mobile devices with small-medium to medium-sized screens. On laptops, desktop computers and tablets with large screens, **THE IMAGES COULD LOOK KINDA WEIRD**.
-- To avoid image distortion, the device must be placed vertically (not panoramic) when taking the screenshot.
+- :signal_strength: It is essential that the device have an internet connection to use the app.
+- :iphone: The app is designed to be used on mobile devices with small-medium to medium-sized screens. On laptops, desktop computers and tablets with large screens, **THE IMAGES COULD LOOK KINDA WEIRD**.
+- :arrow_up_down: To avoid image distortion, the device must be placed vertically (not panoramic) when taking the screenshot.
 
 
 ### Want to collaborate?
