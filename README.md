@@ -8,16 +8,16 @@ With this project You can make card similar to other card games like Pokemon or 
 
 
 ### Features
--You can choose all, from the name of the Michi, to the image of your card.
--By the moment are two *'Feral Cards'*, that are singular types of cards. Go for them!
+- You can choose all, from the name of the Michi, to the image of your card.
+- By the moment are two *'Feral Cards'*, that are singular types of cards. Go for them!
 
 
 ### How to use
 This section will guide you through easy use of the app, with clear directions.
--To create a **New Michi Card**, press the *'Create Michi Card'* option.\
+- To create a **New Michi Card**, press the *'Create Michi Card'* option.\
 It is the first option on the main menu.\
--You'll instantly see a Cool kitten wearing sunglasses, and the Form to create your own Michi Card!\
--**The only essential requirement on the form to create the card is to write Michi's name.**\
+- You'll instantly see a Cool kitten wearing sunglasses, and the Form to create your own Michi Card!\
+- **The only essential requirement on the form to create the card is to write Michi's name.**\
 The name must be a maximum of 9 characters. Choose the name that seems funniest or cutest to you.\
 -You can write a description about the feline in the 'How is the Michi' section, in 125 characters (including spaces) or less. If you don't write anything, no problem, some feline deity will grant the Michi they divine personality.\
 -The Michi Card's stats range from 1 to 100. The initial value of each stat is 1, and can be changed as desired. If this number is left as is, the app will choose a random value (between 1 and 100) for that stat.\
