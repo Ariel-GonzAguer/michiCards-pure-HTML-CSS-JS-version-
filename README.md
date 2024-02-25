@@ -1,17 +1,18 @@
-#Michi Card!
-##Create Your Own Michi Card Collection! :smiley_cat:
+# Michi Card!
+## Create Your Own Michi Card Collection! :smiley_cat:
 
 Welcome to this web project, where You can create your very own Kitty Cat Card Collection.
 The main porpuse of this project was to put in practice various things learned in the CodeCademy's Front End Engineer Path, specially the use of third party APIS, and create UIs based in User input.
 With this project You can make card similar to other card games like Pokemon or Yugi-Oh, but cat based, to share with your friends via any social media. The card is only yours :smirk_cat:
+- - - 
 
 
-###Features
+### Features
 -You can choose all, from the name of the Michi, to the image of your card.
 -By the moment are two *'Feral Cards'*, that are singular types of cards. Go for them!
 
 
-###How to use
+### How to use
 This section will guide you through easy use of the app, with clear directions.
 -To create a **New Michi Card**, press the *'Create Michi Card'* option.
 It is the first option on the main menu.
@@ -33,7 +34,7 @@ Now You can take a screenshot to save the new Michi Card on our device!
 
 **Note**: to create a New Michi Card, after created one, just refresh/reload your browser, and you will be back in the Create Your Own Michi Card section.
 
-###Where is the data to create the Michi Card obtained from?
+### Where is the data to create the Michi Card obtained from?
 This web project is created around different sources.
 The gifs that load on the Home Page are obtained through the [CATAAS](https://cataas.com/) API.
 Random photos for the Card images are obtained using The [Cat API](https://thecatapi.com/).
@@ -42,6 +43,6 @@ I found the Cool kitten wearing sunglasses many years ago on Google doing anothe
 And the font comes from Google Fonts
 
 
-###What to collaborate?
+### What to collaborate?
 Just send a message! :cat:
 
