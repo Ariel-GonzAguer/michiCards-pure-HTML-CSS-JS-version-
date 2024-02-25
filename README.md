@@ -8,12 +8,12 @@ With this project You can make card similar to other card games like Pokemon or 
 
 
 ### Features
--You can choose all, from the name of the Michi, to the image of your card.\
+-You can choose all, from the name of the Michi, to the image of your card.
 -By the moment are two *'Feral Cards'*, that are singular types of cards. Go for them!
 
 
 ### How to use
-This section will guide you through easy use of the app, with clear directions.\
+This section will guide you through easy use of the app, with clear directions.
 -To create a **New Michi Card**, press the *'Create Michi Card'* option.\
 It is the first option on the main menu.\
 -You'll instantly see a Cool kitten wearing sunglasses, and the Form to create your own Michi Card!\
@@ -27,7 +27,7 @@ You can take a photo with your device pressing the 'select file' button, bellow 
 Try to put the face of your Michi in the upper section of the photo to have better results.\
 **IMPORTANT!** The photo you take with your device is NOT saved anywhere by default, neither in the server or client file system.
 2. Use a random photo obtained by the app
-Just press 'Preview Your Michi' buttom to see the kitty cat photo that will be in the new Card.\
+Just press 'Preview Your Michi' buttom to see the kitty cat photo that will be in the new Card.
 
 Once the above information is complete, press the '**Ready!**' button to see the new created Michi Card. \
 Now You can take a screenshot to save the new Michi Card on our device!\
