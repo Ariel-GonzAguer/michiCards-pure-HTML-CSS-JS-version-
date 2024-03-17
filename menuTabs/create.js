@@ -65,10 +65,10 @@ class michiCard {
 let newMichiCard;
 let michiCards = [];
 
-async function collectInfoMichiCard() {
+async function collectInfoMichiCard(e) {
   try {
     if (document.getElementById('michiName').checkValidity()) {
-      // e.preventDefault();
+      e.preventDefault();
       const michiName = document.getElementById('michiName').value;
       const imgMichi = document.getElementById('photo').files[0] ? getPhoto() : imgURL;
       const michiAtributtes =
@@ -198,20 +198,22 @@ document.getElementById('atributtes').addEventListener('input', (e) => {
 });
 
 
+// NEXT STEPS!!
 // local storage stuff
 // Load instances and counterID value in localStorage //
-window.addEventListener('DOMContentLoaded', () => {
-  if (localStorage.getItem('michiCards')) {
-    michiCards = JSON.parse(localStorage.getItem('michiCards'));
-  }
-  if (localStorage.getItem('counterID')) {
-    counterID = parseInt(localStorage.getItem('counterID'));
-  }
-});
 
-// save instances and counterID value in localStorage //
-window.addEventListener('beforeunload', () => {
-  localStorage.setItem('michiCards', JSON.stringify(michiCards));
-  localStorage.setItem('counterID', counterID);
-});
+// window.addEventListener('DOMContentLoaded', () => {
+//   if (localStorage.getItem('michiCards')) {
+//     michiCards = JSON.parse(localStorage.getItem('michiCards'));
+//   }
+//   if (localStorage.getItem('counterID')) {
+//     counterID = parseInt(localStorage.getItem('counterID'));
+//   }
+// });
+
+// // save instances and counterID value in localStorage //
+// window.addEventListener('beforeunload', () => {
+//   localStorage.setItem('michiCards', JSON.stringify(michiCards));
+//   localStorage.setItem('counterID', counterID);
+// });
 
