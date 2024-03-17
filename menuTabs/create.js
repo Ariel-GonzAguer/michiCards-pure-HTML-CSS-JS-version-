@@ -1,11 +1,12 @@
-// endPoints
-const urlTheCatApi = 'https://api.thecatapi.com/v1/images/search';
+// endPoint
+const urlTheCatApi = 'https://api.thecatapi.com/v1/images/search'
 
 // get img from TheCatAPI
 let imgURL;
+
 async function getImg() {
-  // esta función al usarl el bucle while (true) se ejecutará continuamente hasta que se cumpla una condición específica o hasta que se produzca alguna acción para detenerlo. En este caso hasta que se cumpla la condición del tamaño de la img. Es MUY útil para llamadas con requrimientos.
   try {
+    // esta función al usar el bucle while (true) se ejecutará continuamente hasta que se cumpla una condición específica o hasta que se produzca alguna acción para detenerlo. En este caso hasta que se cumpla la condición del tamaño de la img. Es MUY útil para llamadas con requrimientos.
     while (true) {
       const response = await fetch(urlTheCatApi);
       if (response.ok) {
@@ -18,16 +19,18 @@ async function getImg() {
         throw new Error('Error al obtener la imagen');
       }
     }
+
     return imgURL;
+
   } catch (error) {
     console.error(error);
-    return null; //
   }
 }
 
 // preview img
 document.getElementById('lookMichi').addEventListener('click', async (e) => {
   e.preventDefault();
+
   imgURL = await getImg();
   const previewImg = document.getElementById('previewImg');
   previewImg.style.display = 'block';
@@ -41,11 +44,11 @@ document.getElementById('lookMichi').addEventListener('click', async (e) => {
 });
 
 // create Card
-let counterID = 0;
+// let counterID = 0; //Agregar esto cuando se almacenen las cartas en el localStorage.
 
 class michiCard {
   constructor(name, img, atributtes, agility, softness, evilness, goodness, velocity) {
-    this._id = michiCard.incrementId(); // Asignar un ID único
+    // this._id = michiCard.incrementId(); // Asignar un ID único. Agregar esto cuando se almacenen las cartas en el localStorage.
     this._name = name;
     this._img = img;
     this._atributtes = atributtes;
@@ -56,19 +59,18 @@ class michiCard {
     this._velocity = velocity;
   }
 
-  static incrementId() {  // Método estático para incrementar el ID
-    counterID++;
-    return this._id = counterID++;
-  }
+  // static incrementId() {  // Método estático para incrementar el ID. Agregar esto cuando se almacenen las cartas en el localStorage.
+  // counterID++;
+  // return this._id = counterID;
+  // }
 }
 
 let newMichiCard;
-let michiCards = [];
+// let michiCards = []; //Agregar esto cuando se almacenen las cartas en el localStorage.
 
-async function collectInfoMichiCard(e) {
+async function collectInfoMichiCard() {
   try {
     if (document.getElementById('michiName').checkValidity()) {
-      e.preventDefault();
       const michiName = document.getElementById('michiName').value;
       const imgMichi = document.getElementById('photo').files[0] ? getPhoto() : imgURL;
       const michiAtributtes =
@@ -80,10 +82,11 @@ async function collectInfoMichiCard(e) {
       const velocityStatValue = document.getElementById('velocityStat').value === '1' ? randomStats() : document.getElementById('velocityStat').value;
 
       newMichiCard = new michiCard(michiName, imgMichi, michiAtributtes, agilityStatValue, softnessStatValue, evilnessStatValue, goodnessStatValue, velocityStatValue);
-      michiCards.push(newMichiCard);
+      // michiCards.push(newMichiCard); //Agregar esto cuando se almacenen las cartas en el localStorage.
 
       document.getElementById('newCard').style.display = 'grid';
       document.querySelector('main').style.display = 'none';
+
     } else {
       window.alert('You need to write a name first!')
     }
@@ -153,7 +156,9 @@ function randomAtributtes() {
     `Amidst the swirling mists of the mystical marshlands, ${document.getElementById('michiName').value} the Marsh Mystic communed with the spirits of the swamp with an otherworldly grace.`,
     `Beneath the shadow of the towering skyscrapers, ${document.getElementById('michiName').value} the Alley Avenger prowled with a steely determination and unwavering resolve.`
   ];
+
   const randomAtributte = options[Math.floor(Math.random() * options.length)];
+
   return randomAtributte;
 }
 
@@ -161,11 +166,10 @@ function randomStats() {
   return Math.floor(Math.random() * 100);
 }
 
-
-// eventListenners
-// user load photo
+// usuario carga toma foto
 function getPhoto() {
   const file = document.getElementById('photo').files[0];
+
   if (file) {
     const reader = new FileReader();
     reader.onload = function (e) {
@@ -175,14 +179,7 @@ function getPhoto() {
   }
 }
 
-// create and lunch new Michi Card //
-document.getElementById('ready').addEventListener('click', async (e) => {
-  e.preventDefault();
-  await collectInfoMichiCard();
-  createNewMichiCard()
-});
-
-// character count // 
+// contador de carácteres
 document.getElementById('atributtes').addEventListener('input', (e) => {
   e.preventDefault();
   const charCount = document.getElementById('charCount');
@@ -196,6 +193,15 @@ document.getElementById('atributtes').addEventListener('input', (e) => {
 
   charCount.textContent = `${charLength}/${maxLength + 1}`;
 });
+
+// eventListenners
+// crear y mostar nueva MichiCard
+document.getElementById('ready').addEventListener('click', async (e) => {
+  e.preventDefault();
+  await collectInfoMichiCard();
+  createNewMichiCard()
+});
+
 
 
 // NEXT STEPS!!
