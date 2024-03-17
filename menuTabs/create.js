@@ -65,10 +65,9 @@ class michiCard {
 let newMichiCard;
 let michiCards = [];
 
-async function collectInfoMichiCard(e) {
+async function collectInfoMichiCard() {
   try {
     if (document.getElementById('michiName').checkValidity()) {
-      e.preventDefault();
       const michiName = document.getElementById('michiName').value;
       const imgMichi = document.getElementById('photo').files[0] ? getPhoto() : imgURL;
       const michiAtributtes =
