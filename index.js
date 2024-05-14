@@ -24,7 +24,7 @@ async function getGif() {
 document.getElementById('contact').addEventListener('click', () => {
   try {
     alert('You are being redirected to my portfolio where you can see a little more of my work and contact me. Thanks for Playing!');
-    window.open('https://diosdenada.github.io/portpholio/');
+    window.open('https://ariegonzaguer.netlify.app/');
   } catch (error) {
     console.error(error);
   }
