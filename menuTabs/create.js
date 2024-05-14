@@ -44,11 +44,11 @@ document.getElementById('lookMichi').addEventListener('click', async (e) => {
 });
 
 // create Card
-// let counterID = 0; //Agregar esto cuando se almacenen las cartas en el localStorage.
+let counterID = 0; //Agregar esto cuando se almacenen las cartas en el localStorage.
 
 class michiCard {
   constructor(name, img, atributtes, agility, softness, evilness, goodness, velocity) {
-    // this._id = michiCard.incrementId(); // Asignar un ID único. Agregar esto cuando se almacenen las cartas en el localStorage.
+    this._id = michiCard.incrementId(); // Asignar un ID único. Agregar esto cuando se almacenen las cartas en el localStorage.
     this._name = name;
     this._img = img;
     this._atributtes = atributtes;
@@ -59,14 +59,14 @@ class michiCard {
     this._velocity = velocity;
   }
 
-  // static incrementId() {  // Método estático para incrementar el ID. Agregar esto cuando se almacenen las cartas en el localStorage.
-  // counterID++;
-  // return this._id = counterID;
-  // }
+  static incrementId() {  // Método estático para incrementar el ID. Agregar esto cuando se almacenen las cartas en el localStorage.
+    counterID++;
+    return this._id = counterID;
+  }
 }
 
 let newMichiCard;
-// let michiCards = []; //Agregar esto cuando se almacenen las cartas en el localStorage.
+let michiCards = []; //Agregar esto cuando se almacenen las cartas en el localStorage.
 
 async function collectInfoMichiCard() {
   try {
@@ -82,7 +82,7 @@ async function collectInfoMichiCard() {
       const velocityStatValue = document.getElementById('velocityStat').value === '1' ? randomStats() : document.getElementById('velocityStat').value;
 
       newMichiCard = new michiCard(michiName, imgMichi, michiAtributtes, agilityStatValue, softnessStatValue, evilnessStatValue, goodnessStatValue, velocityStatValue);
-      // michiCards.push(newMichiCard); //Agregar esto cuando se almacenen las cartas en el localStorage.
+      michiCards.push(newMichiCard); //Agregar esto cuando se almacenen las cartas en el localStorage.
 
       document.getElementById('newCard').style.display = 'grid';
       document.querySelector('main').style.display = 'none';
@@ -208,18 +208,19 @@ document.getElementById('ready').addEventListener('click', async (e) => {
 // local storage stuff
 // Load instances and counterID value in localStorage //
 
-// window.addEventListener('DOMContentLoaded', () => {
-//   if (localStorage.getItem('michiCards')) {
-//     michiCards = JSON.parse(localStorage.getItem('michiCards'));
-//   }
-//   if (localStorage.getItem('counterID')) {
-//     counterID = parseInt(localStorage.getItem('counterID'));
-//   }
-// });
+window.addEventListener('DOMContentLoaded', () => {
 
-// // save instances and counterID value in localStorage //
-// window.addEventListener('beforeunload', () => {
-//   localStorage.setItem('michiCards', JSON.stringify(michiCards));
-//   localStorage.setItem('counterID', counterID);
-// });
+  if (localStorage.getItem('michiCards')) {
+    michiCards = JSON.parse(localStorage.getItem('michiCards'));
+  }
+  if (localStorage.getItem('counterID')) {
+    counterID = parseInt(localStorage.getItem('counterID'));
+  }
+});
+
+// save instances and counterID value in localStorage //
+window.addEventListener('beforeunload', () => {
+  localStorage.setItem('michiCards', JSON.stringify(michiCards));
+  localStorage.setItem('counterID', counterID);
+});
 
