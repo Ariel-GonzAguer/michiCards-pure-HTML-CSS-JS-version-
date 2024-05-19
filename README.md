@@ -1,10 +1,11 @@
-# Michi Card!
+# MichiCards!
 ## Create Your Own Michi Card Collection! :smiley_cat:
 
 Welcome to this web project, where You can create your very own Kitty Cat Card Collection.\
 The main porpuse of this project was to put in practice various things learned in the CodeCademy's Front End Engineer Path, specially the use of third party APIS, and create UIs based in User input.\
 With this project You can make cards similar to other card games like Pokemon or Yugi-Oh, but Cat based, to share with your friends via any social media, after take the screenshot.\
 The card is only yours :smirk_cat:
+[Look the new React version of MichiCards!](https://github.com/Ariel-GonzAguer/michiCards-React-Vite-version)
 - - - 
 
 
